@@ -1,0 +1,9 @@
+Version 1.1
+September 21, 2007
+    Fix error in validating dictionary-like objects
+    Make the call_id argument to call set to True by default
+
+Version 1.0
+July 16, 2006
+    Initial release
+

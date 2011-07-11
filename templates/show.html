@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+	<h2> Items of the user {{username}}:</h2>
+
+	{% for entry in entries %}
+		<ul style="list-style-type: none; width: 90%; border: 1px dashed gray;">
+			{% ifequal entry.entry_type "lastfm" %}
+				<li style="float: right;">
+					{% if entry.image %}
+						<img src="{{entry.image}}" />
+					{% else %}
+						No picture available
+					{% endif %}
+				</li>
+			{% endifequal %}
+			<li><b>{{entry.name}}</b></li>
+			<li>Published at: {{entry.date}}</li>
+			{% if entry.url %}
+				<li><a href="{{entry.url}}" target="_blank">{{entry.url}}</a></li>
+			{% endif %}
+			{% ifequal entry.entry_type "delicious" %}
+				<li>{{entry.description}}</li>
+			{% endifequal %}
+			{% ifequal entry.entry_type "lastfm" %}
+				<li>Artist: {{entry.artist}}</li>
+				<li>Album: {{entry.album}}</li>
+			{% endifequal %}
+			
+		</ul>
+	{% endfor %}
+
+{% endblock%}

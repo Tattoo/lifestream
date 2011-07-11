@@ -1,0 +1,107 @@
+#master {
+    min-width: 900px;
+    width: 95%;
+    margin: auto;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    min-height: 675px;
+}
+
+.rounded_box {
+    background : #999 url(../images/rounded_tl.png) no-repeat;
+    width : auto;
+    height : auto;
+    position : relative;
+    padding : 30px 40px;
+}
+
+.rounded_top_right, .rounded_bottom_left, .rounded_bottom_right {
+    position : absolute;
+    width : 39px;
+    height : 39px;  /* corner images are 40x40 */
+    display : block;
+    margin-bottom : -1px;  /* this is for IE */
+}
+
+/* change position and image: bottom-left */
+.rounded_bottom_left {
+    background : transparent url(../images/rounded_bl.png) no-repeat;
+    bottom : 0;
+    left : 0;
+}
+
+/* change position and image: bottom-right */
+.rounded_bottom_right {
+    background : transparent url(../images/rounded_br.png) no-repeat;
+    right : 0;
+    bottom : 0;
+}
+
+/* change position and image: top-right */
+.rounded_top_right {
+    background : transparent url(../images/rounded_tr.png) no-repeat;
+    top : 0;
+    right : 0;
+}
+
+#menu {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none; 
+    float: left; 
+    position:relative;   
+	float:left;
+	z-index:10;
+	margin-top:10px;
+	width:120px;
+	height:1%;
+}
+
+#menu li {
+	background: #eee;
+	color: #444;
+	width: 119px;
+	display: block;
+	background: url(../images/side-tab-bg-off.gif) no-repeat;
+	border: none;
+	cursor: pointer;
+	padding: 13px 0px 5px 10px;
+	margin: 0px 0px 5px 0px;
+	font-size: 11px;
+	font-family: sans-serif;
+	font-weight: normal;
+	height: 2.6em   ;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+#menu li.active {
+    background: #fff;
+    font-weight: bold;
+    width: 120px;
+    border-right: #fff 1px solid;
+    border: none;
+    color: #0033CC;
+    background: url(../images/side-tab-bg.gif) no-repeat;
+    padding: 13px 0px 5px 10px;
+    cursor: default;
+}
+
+#content {
+    position:relative;
+    float:left;
+    padding:6px 10px;
+    margin:0px 0px 0px -1px;
+    border:#765 1px solid;
+    position:relative;
+    background-color: #99FF00;
+    min-height:200px;
+    z-index:0;
+    width: auto;
+}
+
+ul.entry {
+    list-style-type: none; 
+    width: 90%; 
+    border: 1px dashed gray;
+}

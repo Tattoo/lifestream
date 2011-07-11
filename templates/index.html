@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+		<title>Lifestream</title>
+	 	<link rel="stylesheet" href="/lifestream/static/styles/style.css" type="text/css" charset="utf-8">
+	</head>
+
+	<body>
+				
+		<div id="master" style="padding: 0px;"> 
+<!--			
+			<div class="rounded_box">
+				<span class="rounded_top_right"></span>
+-->
+
+					<ul id="menu">
+						<li class="active">Tab #1</li>
+						<li>Tab #2</li>
+						<li>Tab #3</li>
+					</ul>
+
+				<div id="content">
+
+						{% block content %}
+
+							{% for row in entriesByUsers %}
+								<h2>{{row.username}}</h2>
+								{% for entry in row.entries %}
+									<ul class="entry">
+										{% ifequal entry.entry_type "lastfm" %}
+											<li style="float:right;">
+												{% if entry.image %}
+													<img src="{{entry.image}}" />
+												{% else %}
+													No picture available
+												{% endif %}
+											</li>
+										{% endifequal %}
+										<li><b>{{entry.name}}</b></li>
+										<li>Published at: {{entry.date}}</li>
+										{% if entry.url %}
+											<li><a href="{{entry.url}}" target="_blank">{{entry.url}}</a></li>
+										{% endif %}
+										{% ifequal entry.entry_type "delicious" %}
+											<li>{{entry.description}}</li>
+										{% endifequal %}
+								
+										{% ifequal entry.entry_type "lastfm" %}
+											<li>Artist: {{entry.artist}}</li>
+											<li>Album: {{entry.album}}</li>
+										{% endifequal %}
+									</ul>
+								{% endfor %}
+								<br style="clear:both;" />
+							{% endfor %}
+						
+						{% endblock %}
+				</div>
+<!--
+				<span class="rounded_bottom_left"></span>
+				<span class="rounded_bottom_right"></span>
+			</div>
+-->			
+		</div>
+
+	</body>
+</html>
